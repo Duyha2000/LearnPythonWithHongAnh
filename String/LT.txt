@@ -1,0 +1,27 @@
+# "Input" String:
+str = input("Enter a string: ") # Xin chao
+# Manipulation
+print(str.upper())
+print(str.strip())
+print(str.replace(str, "Xin cam on"))
+# Xin cảm ơn
+# find: nêu tìm thấy tr về index, nếu k trả về -1
+
+# Xin chao
+# 01234567
+print(str.find("schao"))
+# Validation:
+print(str.isalpha())
+# split -> biến string thành 1 list of string
+lst =  str.split()
+print(lst) # ["chao", "buoi","sang"]
+# join:
+lst1 = ", ".join(lst)
+print(lst1)
+# Indexing & Slicing:
+# Chao buoi ->toi -> in ra "C"
+print(str[0])
+# print(str[-3::1])
+# start : end : step (>0 đi từ trái qua phải, <0 phải qua trái)
+# đảo ngược lại:
+print(str[::-1])

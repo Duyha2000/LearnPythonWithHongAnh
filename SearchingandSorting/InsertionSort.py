@@ -11,6 +11,7 @@ def insertionSort(arr):
 # dictionary -> dictionary
 # String , dic, list, io file, regex, tuple
 
+# return ( calc:
 # String (regex)
 arr = [94, 30, 14, 20, 444, 2091, 390, 29, 1]
 

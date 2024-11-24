@@ -1,0 +1,127 @@
+https://docs.google.com/document/d/1ri43FlfIQl6SHRHKf61_60nOvmuiozLrxNnH3gtuXWA/edit?usp=sharing
+
+Bài 1:
+Chuỗi Palindrome
+Bài tập
+
+Chuỗi Palindrome là các chuỗi có dạng khi viết xuôi và viết ngược thì nó đều có dạng như nhau.
+
+Chẳng hạn: aba, acca, iiiuuuiii,... là các chuỗi có dạng Palindrome.
+
+Hãy viết chương trình kiểm tra xem một chuỗi được nhập vào từ bàn phím có phải là một chuỗi Palindrome hay không?
+
+Nếu có hãy in ra màn hình:
+Chuỗi vừa nhập là chuỗi Palindrome!
+Ngược lại, khi chuỗi nhập vào không phải là chuỗi Palindrome thì in ra màn hình:
+Chuỗi vừa nhập KHÔNG phải là một chuỗi Palindrome!
+
+def Is_palindrome(str)-> bool:
+    if str == str[::-1]:
+        print("Chuỗi vừa nhập là chuỗi Palindrome!")
+        return True
+    else:
+        print("Chuỗi vừa nhập không phải là một chuỗi Palindrome!")
+        return False
+
+print(Is_palindrome("racecar"))
+
+# 1 khi return các dòng ở dưới sẽ không thực thi nữa
+
+Bài 2:
+Tổng và trung bình của số trong chuỗi
+Cho một chuỗi được nhập vào từ bàn phím, bạn hãy tính toán tổng và trung bình của các số xuất hiện trong chuỗi này.
+Note:
+
+Lưu ý: Mỗi một ký tự số sẽ được coi như là 1 số độc lập
+Ta có thể sử dụng hàm isdigit() để kiểm tra một ký tự đấy có phải là số hay không
+Để có thể kiểm tra từng chữ cái ta sẽ sử dụng vòng for. Tuy nhiên tới chương sau ta mới được học kỹ lưỡng về vòng lặp for này. Vậy nên Tek4.VN đã để sẵn 1 đoạn mã có thể duyệt từng ký tự trong chuỗi s được nhập từ bàn phím. Công việc của bạn sẽ là kiểm tra xem ký tự đó có phải là số hay không.
+
+Ví dụ:
+Đầu vào 1:
+Tek4.vn2899#6@
+Đầu ra 1:
+Tổng các số là : 38
+Trung bình các số : 6.333333333333333
+
+def trungbinhcong(str) -> float:
+    count = 0
+    sum = 0
+    for number in str:
+        if number.isdigit():
+            sum += int(number)
+            count +=1
+        if count == 0:
+            return 0.0
+    return sum/count
+
+print(trungbinhcong("hdom"))
+
+Bài tập 3:
+Chuỗi giả Palindrome
+Bài tập
+
+Chúng ta đã biết một chuỗi được gọi là Chuỗi Palindrome nếu như viết xuôi và viết ngược của nó đều như nhau. Tuy nhiên, có những chuỗi ta tạm gọi là giả Chuỗi Palindrome, nếu như n ký tự đầu tiên của nó bằng với n ký tự cuối cùng đảo ngược của nó.
+
+Hãy viết chương trình, cho phép nhập vào một chuỗi ký tự s và 1 số nguyên dương n>0. Sau đó, hãy xác định xem chuỗi đó có phải là chuỗi giả Chuỗi Palindrome với n hay không?
+
+Nếu có hãy in ra màn hình
+Chuỗi vừa nhập là chuỗi giả Palindrome với {n}
+Nếu không hãy in ra màn hình
+Chuỗi vừa nhập KHÔNG phải là một chuỗi giả Palindrome với {n}
+Với {n} là số nguyên dương đã được nhập từ bàn phím.
+
+Ví dụ
+
+Chuỗi s= abcghfcba với n=3 là một chuỗi giả Palindrome, trong khi s với n=4 không phải là một chuỗi giả Palindrome.
+abc -> cba
+
+
+Tip&Trick:
+
+Hãy lưu ý đến các chỉ số và cắt chuỗi để đảo ngược chuỗi phù hợp
+
+def is_fake_palindrome(str, n: int)-> bool:
+    if str[0:n:1] == str[:-n-1:-1]:
+        print(f"Chuỗi vừa nhập là chuỗi giả Palindrome với {n}")
+        return True
+    else:
+        print(f"Chuỗi vừa nhập KHÔNG phải là một chuỗi giả Palindrome với {n}")
+        return False
+
+print(is_fake_palindrome("abcdksjsjdcba", 4))
+
+# str = "abcdksjsjdcba"
+# n = 4
+# print(str[0:n:1]) # abcd
+# print(str[:-n-1:-1]) # dcba -> abcd
+#
+# print(str[0:n:1] == str[:-n-1:-1])
+
+Bài 4:
+Chuỗi từ các ký tự đầu, giữa và cuối
+Cho 2 chuỗi s1 và s2 được nhập vào từ bàn phím. Hãy viết chương trình tạo ra chuỗi mới được tạo ra từ ký tự đầu, giữa và cuối từ 2 chuỗi kia.
+
+Note
+
+Nếu là chuỗi đầu vào là chuỗi chẵn, thì lấy ký tự đằng sau điểm giữa
+Ví dụ:
+
+Đầu vào 2:
+Tek4.vn
+Python
+Đầu ra 2:
+TP4hnn
+
+# str = "Helkxol" -> (đầu + cuối) /2 = 2.5 -> em sẽ lấy 3
+#        0123456
+# (1+5)/2 = 3
+
+def new_string(s1: str, s2: str)-> str:
+    middle_index_s1 = len(s1)//2
+    middle_index_s2 = len(s2)//2
+    str = s1[0] + s2[0] + s1[middle_index_s1] + s2[middle_index_s2] + s1[-1] +s2[-1]
+    return str
+
+
+print(new_string("Tek4.vn","Python"))
+

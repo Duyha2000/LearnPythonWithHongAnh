@@ -1,0 +1,60 @@
+# List: [
+lst = [1,4,4,9,4,2,3,4]
+lst2 = ["3", "4","5", 2]
+# index: 0 -> length - 1
+# print(lst[2])
+
+# In ra các giá trị trong lst:
+# Vòng lặp for i: khi làm các bài toán liên quan timf index
+# for i in range(len(lst)):
+#      print(lst[i])
+
+# Voòng lặp for each:
+# for num in lst:
+#     print(num)
+print(len(lst))
+# Max , min trong list
+print(max(lst))
+
+# Add element: append và insert
+lst.append(5)
+print(lst)
+lst.insert(4,9)
+print(lst) # [1, 2, 3, 4, 9, 5]
+# Remove: pop, remove
+lst.pop(2) # mất giá trị của index 2 (nếu không chuyền thì mất phần tử cuối, nếu truyn tham số s mất index)
+print(lst)
+# lst.remove(4) # xóa đi phần tử đầu tiên
+# print(lst)
+# Xóa đi tất cả số 4 trong list
+for x in lst:
+    if x == 4:
+        lst.remove(x)
+print(lst)
+# Sort: lst.sort()
+# lst.sort(reverse=True)
+
+# Nhập các số vào list, tính tổng các số chẵn trong list:
+# 5 phần tử
+
+#list[0] = 4 <-
+# list[1] = 5
+# n = int(input("Nhập 1 số"))
+n = 5
+# for input:
+# for i in range(n):
+#     number = int(input( "Input number: "))
+#     list3.append(number)
+# print(list3)
+# sum = 0 # sum để cộng dồn các giá trị
+# for x in list3:
+#     if x % 2 == 0:
+#         sum += x
+# print(sum)
+# Đếm xem trong list có bao nhiêu phần tử > 0
+list3 = [2,-4,-5,2,3]
+count = 0
+for x in list3:
+    if x > 0:
+        count += 1
+print(count)

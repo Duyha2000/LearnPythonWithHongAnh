@@ -1,0 +1,91 @@
+# Trong python:
+# int, double, float, boolean, tuple, list,...
+
+# QUản lý thông tin của học sinh gồm có tên, tuổi, điểm:
+name = "Hong Anh"
+age = 18
+grade = 8.4
+
+name2 = "HA"
+age2 = 22
+grade2 = 10
+
+# OOP: Class, Object
+dictionary = [{'name': 'Hong Anh', 'age': 18, 'grade': 8.4}, {'name': 'HA', 'age': 22, 'grade': 10}]
+
+
+# method: def hiển thị thông tin học sinh
+# Inheritence:
+# class: 12A, 12B -> Object
+
+
+class Student:
+    # init: phương thức khởi tạo
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def information(self):
+        print(self.name, self.age)
+
+
+# Khởi tạo 1 object từ class Student:
+student1 = Student("Hong Anh", 18)
+student1.information()
+
+student2 = Student("Anh", 20)
+student2.information()
+
+
+# Car: brand, model, color, year
+# Khởi tạo 3 object là Audi, BMW, Nissan và in các thông tin của xe
+#
+# class Car:
+#     def __init__(self, brand, model, color, year):
+#         self.brand = brand
+#         self.model = model
+#         self.color = color
+#         self.year = year
+#
+#     def __str__(self):
+#         return self.brand + ' - ' + self.model + self.color + str(self.year)
+#
+#
+# Car1 = Car('Audi', 'A5', 'red', 2014)
+# Car2 = Car('BMW', 'B7', 'white', 2019)
+# Car3 = Car('Nissan', 'K9', 'black', 2020)
+# print(Car1)
+# print(Car2)
+# print(Car3)
+
+class Vehicle:
+    def __init__(self, brand, year):
+        self.brand = brand
+        self.year = year
+
+    def __str__(self):
+        return self.brand + " " + str(self.year)
+
+
+class Mortocyle(Vehicle):
+    def __init__(self, brand, year, has_sidecar):
+        super().__init__(brand, year)
+        self.has_sidecar = has_sidecar
+
+    def __str__(self):
+        return super().__str__() + " " + str(self.has_sidecar)
+
+
+class Car(Vehicle):
+    def __init__(self, brand, year, number_of_doors):
+        super().__init__(brand, year)
+        self.number_of_doors = number_of_doors
+
+    def __str__(self):
+        return super().__str__() + " " + str(self.number_of_doors)
+
+
+Motorcycle1 = Mortocyle('Honda', 2022, True)
+Car1 = Car('Audi', 2014, 4)
+print(Motorcycle1)
+print(Car1)

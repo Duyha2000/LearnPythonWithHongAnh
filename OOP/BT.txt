@@ -1,0 +1,8 @@
+Bài 1: Lớp Shape và lớp con Circle và Rectangle
+Tạo một lớp cơ sở Shape với phương thức area() để tính diện tích. Sau đó, tạo hai lớp con Circle và Rectangle, kế thừa từ lớp Shape và ghi đè phương thức area() để tính diện tích của hình tròn và hình chữ nhật.
+
+Bài 2: Lớp Animal và các lớp con Dog và Cat
+Tạo một lớp cơ sở Animal với phương thức sound(). Sau đó, tạo hai lớp con Dog và Cat, kế thừa từ lớp Animal và ghi đè phương thức sound() để in ra âm thanh của loài vật tương ứng.
+
+Bài 3: Lớp Person và lớp con Student và Teacher
+Tạo một lớp cơ sở Person với các thuộc tính name và age, cùng phương thức introduce(). Sau đó, tạo hai lớp con Student và Teacher, kế thừa từ lớp Person. Lớp Student sẽ thêm thuộc tính school, còn lớp Teacher sẽ thêm thuộc tính subject và ghi đè phương thức introduce() để giới thiệu thêm về nghề nghiệp của mình.

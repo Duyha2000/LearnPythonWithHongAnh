@@ -1,0 +1,162 @@
+# Bài 1: Lớp Shape và lớp con Circle và Rectangle
+# Tạo một lớp cơ sở Shape với phương thức area() để tính diện tích.
+# Sau đó, tạo hai lớp con Circle và Rectangle, kế thừa từ lớp Shape và ghi đè phương thức
+# area() để tính diện tích của hình tròn và hình chữ nhật.
+
+class Shape:
+    def __init__(self, name):
+        self.name = name
+
+    def area(self):
+        pass
+
+    def __str__(self):
+        return self.name
+
+
+class Circle(Shape):
+    def __init__(self, name, radius):
+        super().__init__(name)
+        self.radius = radius
+
+    def area(self):
+        return self.radius * (3.14 ** 2)
+
+    def __str__(self):
+        return super().__str__() + " " + str(self.radius) + " " + str(self.area())
+
+
+class Rectangle(Shape):
+    def __init__(self, name, width, height):
+        super().__init__(name)
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+    def __str__(self):
+        return super().__str__() + " " + str(self.width) + " " + str(self.height) + " " + str(self.area())
+
+
+Circle1 = Circle('Circle', 4)
+Rectangle1 = Rectangle('Rectangle1', 5, 8)
+print(Circle1)
+print(Rectangle1)
+
+
+# Bài 2: Lớp Animal và các lớp con Dog và Cat
+# Tạo một lớp cơ sở Animal với phương thức (def function) sound(). Sau đó, tạo hai lớp con Dog và Cat,
+# kế thừa từ lớp Animal và ghi đè phương thức sound() để in ra âm thanh của loài vật tương ứng.
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def sound(self):
+        return "This is an animal"
+
+    def __str__(self):
+        return self.name
+
+
+class Dog(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def sound(self):
+        return super().sound() + " Wolf"
+
+    def __str__(self):
+        return super().__str__() + " " + self.sound()
+
+
+class Cat(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def sound(self):
+        return super().sound() + " Meow"
+
+    def __str__(self):
+        return super().__str__() + " " + self.sound()
+
+
+Dog1 = Dog('Dog1')
+Cat1 = Cat('Cat1')
+print(Dog1)
+
+print(Cat1)
+
+
+# Bài 3: Lớp Person và lớp con Student và Teacher
+# Tạo một lớp cơ sở Person với các thuộc tính name và age, cùng phương thức introduce().
+# Sau đó, tạo hai lớp con Student và Teacher, kế thừa từ lớp Person. Lớp Student sẽ thêm thuộc
+# tính school, còn lớp Teacher sẽ thêm thuộc tính subject và ghi đè phương thức introduce() để
+# giới thiệu thêm về nghề nghiệp của mình.
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def introduce(self):
+        return self.name + str(self.age)
+
+    def __str__(self):
+        return self.introduce()
+
+
+class Student(Person):
+    def __init__(self, name, age, school):
+        super().__init__(name, age)
+        self.school = school
+
+    def introduce(self):
+        return super().introduce() + " " + self.school
+
+    def __str__(self):
+        return self.introduce()
+
+
+class Teacher(Person):
+    def __init__(self, name, age, subject):
+        super().__init__(name, age)
+        self.subject = subject
+
+    def introduce(self):
+        return super().introduce() + " " + self.subject
+
+    def __str__(self):
+        return self.introduce()
+
+
+student1 = Student('student1', 18, 'Havard')
+teacher1 = Teacher('teacher1', 21, 'Math')
+print(student1)
+print(teacher1)
+
+---
+
+# # def mystery(nums: list[int]) -> int:
+# #     result = 0
+# #     for i in range(len(nums)):
+# #         if nums[i] % 2 == 0:
+# #             result += nums[i] * i
+# #     return result
+# # print(mystery([1, 2, 3, 4]))
+# def count_discrepancies(products: list[str], correct_prices: list[float], sold_products: list[str],
+#                         entered_prices: list[float]) -> int:
+#     count = 0
+#     for i in range(len(products)):
+#         for j in range(len(sold_products)):
+#             if products[i] == sold_products[j]:
+#                 if correct_prices[i] != entered_prices[j]:
+#                     count += 1
+#     return count
+#
+#
+# products = ['eggs', 'milk', 'cheese']
+# correct_prices = [2.89, 3.29, 5.79]
+# sold_products = ['eggs', 'eggs', 'cheese', 'milk']
+# entered_prices = [2.89, 2.99, 5.97, 3.29]
+# print(count_discrepancies(products, correct_prices, sold_products, entered_prices))
